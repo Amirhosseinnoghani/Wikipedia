@@ -6,10 +6,11 @@
     tools:context=".fragments.ExploreFragment">
 
 
-    <TextView
+    <androidx.recyclerview.widget.RecyclerView
+        tools:listitem="@layout/item_explore"
+        android:paddingBottom="16dp"
+        android:id="@+id/recycler_explor"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="fragment explor"
-        tools:ignore="HardcodedText" />
+        android:layout_height="wrap_content"/>
 
 </FrameLayout>
