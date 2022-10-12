@@ -71,9 +71,7 @@ class MainActivity : AppCompatActivity() {
             }
             true
         }
-        binding.botoomNavMain.setOnItemReselectedListener {
-
-        }
+        binding.botoomNavMain.setOnItemReselectedListener {}
     }
 
     private fun replaceFragment(fragment: Fragment) {

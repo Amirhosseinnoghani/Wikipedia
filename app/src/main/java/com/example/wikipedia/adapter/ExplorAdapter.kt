@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.wikipedia.data.ItemPost
 import com.example.wikipedia.databinding.ItemExploreBinding
 
@@ -15,7 +16,10 @@ class ExplorAdapter(private val data: ArrayList<ItemPost>) :
 
         fun bindViews(itemPost: ItemPost) {
 
-
+            Glide.with(itemView.context).load(itemPost.imgUrl).into(binding.imgExploreMain)
+            binding.txtExploreTitle.text = itemPost.txtTitle
+            binding.txtExploreSubtitle.text = itemPost.txtSubtitle
+            binding.txtExploreDetail.text = itemPost.txtDetail
 
         }
 

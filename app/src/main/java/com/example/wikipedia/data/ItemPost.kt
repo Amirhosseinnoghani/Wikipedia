@@ -2,9 +2,12 @@ package com.example.wikipedia.data
 
 data class ItemPost(
 
-    private val imgUrl: String,
-    private val txtTitle: String,
-    private val txtSubtitle: String,
-    private val txtDetail: String
+    val imgUrl: String,
+    val txtTitle: String,
+    val txtSubtitle: String,
+    val txtDetail: String,
+    // for trend data =>
+    val isTrend: Boolean,
+    val insight: String
 
 )
