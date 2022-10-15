@@ -11,7 +11,7 @@ import com.example.wikipedia.fragments.ProfileFragment
 import com.example.wikipedia.fragments.TrendFragment
 
 class MainActivity : AppCompatActivity() {
-    lateinit var binding: ActivityMainBinding
+    private lateinit var binding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -79,7 +79,8 @@ class MainActivity : AppCompatActivity() {
         transaction.replace(R.id.frame_main_container, fragment)
         transaction.commit()
     }
-    private fun firstRun(){
+
+    private fun firstRun() {
         replaceFragment(ExploreFragment())
     }
 }

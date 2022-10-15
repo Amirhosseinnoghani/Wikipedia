@@ -3,13 +3,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.Trend_Fragment">
+    tools:context=".fragments.TrendFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.recyclerview.widget.RecyclerView
+        tools:listitem="@layout/item_trend"
+        android:paddingBottom="16dp"
+        android:id="@+id/recycler_trend"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="fragment trend"
-        tools:ignore="HardcodedText" />
+        android:layout_height="wrap_content"/>
+
 
 </FrameLayout>
