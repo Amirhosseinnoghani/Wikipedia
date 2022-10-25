@@ -1,5 +1,6 @@
 package com.example.wikipedia.fragments
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -7,11 +8,13 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.wikipedia.MainActivity2
 import com.example.wikipedia.adapter.ExplorAdapter
+import com.example.wikipedia.adapter.ItemEvent
 import com.example.wikipedia.data.ItemPost
 import com.example.wikipedia.databinding.FragmentExploreBinding
-
-class ExploreFragment : Fragment() {
+const val SEND_DATA_TO_SECOND_ACTIVITY = "sendData"
+class ExploreFragment : Fragment() , ItemEvent {
     private lateinit var binding: FragmentExploreBinding
 
     override fun onCreateView(
@@ -117,10 +120,16 @@ class ExploreFragment : Fragment() {
 
         )
 
-        val myAdapter = ExplorAdapter(dataExplore)
+        val myAdapter = ExplorAdapter(dataExplore,this)
         binding.recyclerExplor.layoutManager =
             LinearLayoutManager(context, RecyclerView.VERTICAL, false)
         binding.recyclerExplor.adapter = myAdapter
+    }
+
+    override fun onItemClicked(itemPost: ItemPost) {
+        val intent = Intent(activity , MainActivity2::class.java)
+        intent.putExtra(SEND_DATA_TO_SECOND_ACTIVITY,itemPost)
+        startActivity(intent)
     }
 
 }
