@@ -53,4 +53,7 @@ dependencies {
 
     // Transformations
     implementation 'jp.wasabeef:glide-transformations:4.3.0'
+
+    // sweet alert dialog
+    implementation 'com.github.f0ris.sweetalert:library:1.6.2'
 }
